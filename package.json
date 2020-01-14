@@ -1,0 +1,18 @@
+{
+  "name": "briantest",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "webpack",
+    "server": "node server"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

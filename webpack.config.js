@@ -1,3 +1,7 @@
+const MiniCssExtractPlugin=require("mini-css-extract-plugin");
+// const CopyPlugin=require("copy-webpack-plugin");
+// const WebpackBar=require("webpackbar");
+
 module.exports={
     mode:"development",
     entry:{
@@ -19,7 +23,34 @@ module.exports={
                         presets:["@babel/preset-react"]
                     }
                 }
+            },
+            {
+                test:/\.(less|css)$/,
+                use:[
+                    MiniCssExtractPlugin.loader,
+                    {loader:"css-loader"},
+                    {loader:"less-loader"}
+                ]
             }
         ]
+    },
+
+    plugins:[
+        new MiniCssExtractPlugin({
+            filename:"[name]-build.css"
+        })
+
+        // new CopyPlugin([
+        //     {from:"src/index.html",to:"../"}
+        // ]),
+
+        // new WebpackBar()
+    ],
+
+    optimization:{
+        splitChunks:{
+            chunks:"all",
+            automaticNameDelimiter:"-"
+        }
     }
 };

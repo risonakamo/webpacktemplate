@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "build": "webpack",
-    "server": "node server"
+    "server": "node testserver/server"
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",

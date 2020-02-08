@@ -1,4 +1,5 @@
 const MiniCssExtractPlugin=require("mini-css-extract-plugin");
+// const ForkTsCheckerWebpackPlugin=require("fork-ts-checker-webpack-plugin");
 // const CopyPlugin=require("copy-webpack-plugin");
 // const WebpackBar=require("webpackbar");
 
@@ -24,6 +25,16 @@ module.exports={
                     }
                 }
             },
+            // {
+            //     test:/\.(tsx|ts)$/,
+            //     exclude:/node_modules/,
+            //     use:{
+            //         loader:"babel-loader",
+            //         options:{
+            //             presets:["@babel/preset-react","@babel/preset-typescript"]
+            //         }
+            //     }
+            // },
             {
                 test:/\.(less|css)$/,
                 use:[
@@ -40,6 +51,8 @@ module.exports={
             filename:"[name]-build.css"
         })
 
+        // new ForkTsCheckerWebpackPlugin(),
+
         // new CopyPlugin([
         //     {from:"src/index.html",to:"../"}
         // ]),
@@ -52,5 +65,9 @@ module.exports={
             chunks:"all",
             automaticNameDelimiter:"-"
         }
+    },
+
+    resolve:{
+        extensions:[".tsx",".ts",".jsx"]
     }
 };

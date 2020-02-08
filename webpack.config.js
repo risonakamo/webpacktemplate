@@ -26,7 +26,7 @@ module.exports={
                 }
             },
             // {
-            //     test:/\.(tsx|ts)$/,
+            //     test:/\.(tsx|ts|js|jsx)$/,
             //     exclude:/node_modules/,
             //     use:{
             //         loader:"babel-loader",
@@ -68,6 +68,6 @@ module.exports={
     },
 
     resolve:{
-        extensions:[".tsx",".ts",".jsx"]
+        extensions:[".tsx",".ts",".jsx",".js"]
     }
 };
